@@ -1,12 +1,14 @@
 import re
+
 #init
 a1 = []
 a2 = []
-t  = 0
+sim_score  = 0
 #####
+
 def read_in():
     regex = r"(\d+)\s+(\d+)"
-    with open("/Users/timo/Documents/code/advent_of_code/1/input.txt", "r") as f:
+    with open("/Users/timo/Documents/code/advent_of_code/input.txt", "r") as f:
         lines = f.readlines()
         print(f"[i] filling a1 and a2 from input.txt...")
         for line in lines:
@@ -19,21 +21,16 @@ def read_in():
         a1.sort()
         a2.sort()
 
-def diff(a1,a2):
-    if a1>a2:
-        return a1-a2
-    elif a1<a2:
-        return a2-a1
-    elif a1==a2:
-        return 0
-
 def main():
-    global t
+    global sim_score
     read_in()
-    for i in range(len(a1)):
-        difference = diff(a1[i],a2[i])
-        t         += difference
-    return t
+    for e1 in a1:
+        c = 0
+        for e2 in a2:
+            if e1 == e2:
+                c += 1
+        sim_score += e1*c
+    return sim_score
 
 if __name__ == "__main__":
     print(main())
