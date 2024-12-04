@@ -30,7 +30,7 @@ def main():
             if e1 == e2:
                 c += 1
         sim_score += e1*c
-    return sim_score23655822
+    return sim_score
 
 if __name__ == "__main__":
     print(main())
