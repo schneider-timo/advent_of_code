@@ -6,7 +6,7 @@ t  = 0
 #####
 def read_in():
     regex = r"(\d+)\s+(\d+)"
-    with open("/Users/timo/Documents/code/advent_of_code/input.txt", "r") as f:
+    with open("input1.txt", "r") as f:
         lines = f.readlines()
         print(f"[i] filling a1 and a2 from input.txt...")
         for line in lines:
